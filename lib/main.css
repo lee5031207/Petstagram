@@ -1,0 +1,63 @@
+body, table, tr, td ,select, input, div, form, textarea, center, option, pre, blockquote, .menubar {
+  font-size:10pt; font-family: Krona One; color: #575656; line-height: 120%
+}
+a:visited { text-decoration: none; }
+a { text-decoration: none; color: white; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+
+.btn {
+  text-decoration: none;
+  color:white;
+  padding:5px 10px 5px 10px;
+  display:inline-block;
+  border-radius: 5px;
+  transition:all 0.1s;
+  font-family: Krona One;
+  background-color: #575656;
+}
+
+body{
+  margin:0;
+}
+
+.nav-container {
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  margin:0;
+  padding:0;
+  background-color:#EDEDED;
+  list-style-type:none;
+}
+li {
+  list-style-type:none;
+}
+.nav-item {
+  padding:15px;
+  cursor:pointer;
+}
+
+.nav-item a {
+  text-align:center;
+  text-decoration: none;
+  color: #575656;
+}
+/*
+.nav-container, header {
+  position:fixed;
+}
+*/
+.nav-item:hover{
+  background-color: #C8C8C8;
+}
+
+.write{
+  margin: 20px 40px 20px 0px;
+}
+
+.join_form{
+  margin: 20px 40px 20px 0px;
+}

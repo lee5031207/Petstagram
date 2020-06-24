@@ -1,0 +1,9 @@
+.mainbox{
+    width : 100%;
+    height : 650px;
+    background-image: url("../main.png");
+    background-repeat: no-repeat;
+    background-position-x: 40px ;
+    background-color: #A4A4A4;
+    grid-template-rows : 150px  390px  150px;
+}
