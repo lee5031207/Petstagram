@@ -85,7 +85,10 @@
         ?>
         <div style="border:1px solid gray;">
             <h4 style="text-align:center;  font-size: x-large;"><?=$data['subject']?></h4>
-            <h5 style="padding-left:50px;"><?=$data['name']?>&nbsp;&nbsp;&nbsp;(<?=$data['user_id']?>)&nbsp;&nbsp;&nbsp;조회수:<?=$data['hit']?></h5>
+            <a href='../../member/member_info.php?user_id=<?=$data['user_id']?>'>
+              <h5 style="padding-left:50px;"><?=$data['name']?>&nbsp;(<?=$data['user_id']?>)
+            </a>
+            &nbsp;&nbsp;&nbsp;조회수:<?=$data['hit']?></h5>
             <hr width="95%" color='94a0fc'>
             <?if($data['file01']){?><img src="./data/<?=$data['file01']?>" alt="<?=$data['file01']?>" width="90%" style="margin:5%;"><?}?>
             <p style="padding-left:50px;"><?=$data['story']?></p>

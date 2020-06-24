@@ -107,7 +107,7 @@
                 <td style="text-align:center; background-color:#FAFAFA;">
                 <? if($member['user_id']){?>
                     <!-- <a href='' data-toggle="modal" data-target="#followingModal"> -->
-                    <a href='../../member_info.php?user_id=<?=$temp_hot['user_id']?>'>
+                    <a href='../../member/member_info.php?user_id=<?=$temp_hot['user_id']?>'>
                       <?=$temp_hot['name']?>
                     </a>
                     <?}else{?>
@@ -182,7 +182,7 @@
                 <td style="text-align:center; background-color:#FAFAFA;"><?=$cnt?></td>
                 <td style="text-align:center; background-color:#FAFAFA;">
                 <? if($member['user_id']){?>
-                    <a href="" data-toggle="modal" data-target="#followingModal" data-whatever="@mdo">
+                      <a href='../../member/member_info.php?user_id=<?=$data['user_id']?>'>
                         <?=$data['name']?>
                     </a>
                     <?}else{?>
