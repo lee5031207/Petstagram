@@ -52,7 +52,7 @@
                     <ul class="nav navbar-nav navbar-right">
                     <?
                         if($member){
-                            ?><li><a><?echo $member['name']?>(<?echo $member['user_id']?>)님 환영합니다</a></li>
+                            ?><li><a href="../../member/member_info.php?user_id=<?=$member['user_id']?>"><?echo $member['name']?>(<?echo $member['user_id']?>)님 환영합니다</a></li>
                             <?
                         }else{?>
                         <li>
@@ -132,9 +132,6 @@
 
 
 </table>
-</br>
-</br>
-</br>
 </br>
 
 <!------------------------------------------------게시판------------------------------------------------------------------------>
@@ -248,7 +245,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">글쓰기</h4>
+                        <h4 class="modal-title" id="exampleModalLabel">자유게시판 글쓰기</h4>
                     </div>
                 <div class="modal-body">
                     <form name="write" action="write_post.php" method="POST" enctype="multipart/form-data">

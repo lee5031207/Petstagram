@@ -59,7 +59,7 @@
                   <ul class="nav navbar-nav navbar-right">
                   <?
                       if($member){
-                          ?><li><a><?echo $member['name']?>(<?echo $member['user_id']?>)님 환영합니다</a></li>
+                          ?><li><a href="../../member/member_info.php?user_id=<?=$member['user_id']?>"><?echo $member['name']?>(<?echo $member['user_id']?>)님 환영합니다</a></li>
                           <?
                       }else{?>
                       <li>
@@ -91,7 +91,7 @@
               <h5 style="padding-left:50px;"><?=$data['name']?>&nbsp;(<?=$data['user_id']?>)
             </a>&nbsp;&nbsp;&nbsp;조회수:<?=$data['hit']?></h5>
             <hr width="95%" color='94a0fc'>
-            <?if($data['file01']){?><img src="./data/<?=$data['file01']?>" alt="<?=$data['file01']?>" width="90%" style="margin:5%;"><?}?>
+            <?if($data['file01']){?><img src="./data/<?=$data['file01']?>" alt="<?=$data['file01']?>" width="50%" style="margin:5%;"><?}?>
             <p style="padding-left:50px;"><?=$data['story']?></p>
         </div><br>
         <div>

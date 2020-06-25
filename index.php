@@ -51,7 +51,7 @@
                     <ul class="nav navbar-nav navbar-right">
                     <?
                         if($member){
-                            ?><li><a><?echo $member['name']?>(<?echo $member['user_id']?>)님 환영합니다.</a></li>
+                            ?><li><a href="./member/member_info.php?user_id=<?=$member['user_id']?>"><?echo $member['name']?>(<?echo $member['user_id']?>)님 환영합니다.</a></li>
 
                             <?
                         }else{?>
