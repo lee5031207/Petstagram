@@ -99,12 +99,12 @@
         </div>
       </div>
 
-    <? } else { ?>
+    <? } else { ?> 
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" onclick="history.back(); return false;"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="exampleModalLabel"><?=$info_member['name'];?>님의 프로필</h4>
+          <h4 class="modal-title" id="exampleModalLabel"><?=$info_member['name'];?> 님의 프로필</h4>
         </div>
         <div class="modal-body">
           <img src="../profile.png" width="100px" height="100px"><br><br><br>
@@ -114,13 +114,18 @@
           <strong>닉네임&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<?=$info_member['nick_name'];?></strong><br><br>
           <strong>이메일&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<?=$info_member['email'];?></strong><br><br>
           <strong>생일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<?=$info_member['birth'];?></strong><br><br>
-          <div class="modal-footer" align='center'>
+          <div class="modal-footer" text-align='center'>
             <?
             $follow_check = "select * from ".$member['user_id']."_following where user_id = ".$info_member['user_id'];
             $check = mysqli_query($connect, $follow_check);
-            $checked = mysqli_fetch_array($check);
-            if(!$checked){?>
-              <input type="button" id="btn_id" value="팔로우 하기" class="btn btn-primary" style="width:100px" onClick="location.href='./following.php?follow_data=<?=$info_member['user_id']?>&userdata=<?=$member['user_id']?>'">
+            #$checked = mysqli_fetch_array($check);
+            if(!$check){
+            ?>
+              <input type="button" id="btn_id" value="팔로우 하기" class="btn btn-primary" style="width:100px" 
+              onClick="location.href='./following.php?follow_data=<?=$info_member['user_id']?>&userdata=<?=$member['user_id']?>'">
+
+              <input type="button" value="팔로우 취소" class="btn btn-danger" style="width:100px"
+              onClick="location.href='./following_cancel.php?follow_data=<?=$info_member['user_id']?>&userdata=<?=$member['user_id']?>'">
               <!-- <script>
               $(document).ready(function(){
                   $("#btn_id").click(function(){
@@ -139,7 +144,7 @@
               })
               </script> -->
            <?}else{?>
-             <h3>팔로우중입니당</h3>
+             <h3>팔로우중</h3>
            <?}?>
           </div>
         </div>

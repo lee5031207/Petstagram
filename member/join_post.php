@@ -55,11 +55,13 @@ values('$id', '$user_id', '$name', '$nick_name', '$birth', '$sex',
 
 $query1 = "Create table ".$user_id."_follower (
     user_id varchar(15),
-    name varchar(15)
+    name varchar(15),
+    PRIMARY KEY ( user_id )
     )";
 $query2 = "Create table ".$user_id."_following (
     user_id varchar(15),
-    name varchar(15)
+    name varchar(15),
+    PRIMARY KEY ( user_id ) 
     )";
 
 mysqli_query($connect, $query);
