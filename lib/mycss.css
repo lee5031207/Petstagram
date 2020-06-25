@@ -37,3 +37,15 @@
     color: white;
     background-color: #26cc97;
 }
+
+.member_img{
+    border-color: black;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+
+.member_info_table>tr>td{
+    
+    text-align: center;
+}

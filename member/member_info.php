@@ -104,28 +104,59 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" onclick="history.back(); return false;"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="exampleModalLabel"><?=$info_member['name'];?> 님의 프로필</h4>
+          <h4 class="modal-title" id="exampleModalLabel" style="text-align:center;"><?=$info_member['name'];?> 님의 프로필</h4>
         </div>
         <div class="modal-body">
-          <img src="../profile.png" width="100px" height="100px"><br><br><br>
-          <strong>아이디&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<?=$info_member['user_id'];?></strong><br><br>
-          <strong>이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<?=$info_member['name'];?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;
-          <strong>닉네임&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<?=$info_member['nick_name'];?></strong><br><br>
-          <strong>이메일&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<?=$info_member['email'];?></strong><br><br>
-          <strong>생일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<?=$info_member['birth'];?></strong><br><br>
+          <table class="table table-borde#A4A4A4 table-hover member_info_table">
+            <tr>
+              <td style="text-align:center; vertical-align: inherit; text-align: center; border-top: 0px" rowspan="2">
+                <img src="../profile.png" width="120px" height="120px">
+              </td>
+              <td style="text-align:center; vertical-align: inherit; text-align: center; border-top: 0px"><strong>게시물</strong></td>
+              <td style="text-align:center; vertical-align: inherit; text-align: center; border-top: 0px"><strong>팔로워</strong></td>
+              <td style="text-align:center; vertical-align: inherit; text-align: center; border-top: 0px"><strong>팔로잉</strong></td>
+            </tr>
+            <tr>
+              <td style="text-align:center; vertical-align: top; text-align: center; border-top: 0px"><strong>
+                <?
+                $info_user_id = $info_member['user_id'];
+                $cnt_query = "SELECT count(*) FROM bbs1 WHERE user_id = '".$info_user_id."'";
+                $cnt_result = mysqli_query($connect, $cnt_query);
+                $cnt_data = mysqli_fetch_array($cnt_result); 
+                ?>
+                <?print_r($cnt_data[0])?>
+              </strong></td>
+              <td style="text-align:center; vertical-align: top; text-align: center; border-top: 0px"><strong>
+                <?
+                $follower_query = "SELECT count(*) FROM ".$info_user_id."_follower";
+                $follower_result = mysqli_query($connect, $follower_query);
+                $follower_data = mysqli_fetch_array($follower_result); 
+                ?>  
+                <?print_r($follower_data[0])?>
+              </strong></td>
+              <td style="text-align:center; vertical-align: top; text-align: center; border-top: 0px"><strong>
+                <?
+                $following_query = "SELECT count(*) FROM ".$info_user_id."_following";
+                $following_result = mysqli_query($connect, $following_query);
+                $following_data = mysqli_fetch_array($following_result); 
+                ?>  
+                <?print_r($following_data[0])?>
+              </strong></td>
+            </tr>
+          </table>
+          <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$info_member['name'];?></strong>&nbsp;&nbsp;(<?=$info_member['nick_name'];?>)
+          <br><br>
           <div class="modal-footer" text-align='center'>
             <?
-            $follow_check = "select * from ".$member['user_id']."_following where user_id = ".$info_member['user_id'];
+            $member_user_id = $member['user_id'];
+            $info_user_id = $info_member['user_id'];
+            $follow_check = "SELECT * FROM ".$member_user_id."_following WHERE user_id = '".$info_user_id."'";
             $check = mysqli_query($connect, $follow_check);
-            #$checked = mysqli_fetch_array($check);
-            if(!$check){
+            $checked = mysqli_fetch_array($check);
+            if(!$checked){
             ?>
-              <input type="button" id="btn_id" value="팔로우 하기" class="btn btn-primary" style="width:100px" 
+              <input type="button" id="btn_id" value="팔로우" class="btn btn-primary" style="width:100px; background-color: #00c183; border: 1px solid #00c183;" 
               onClick="location.href='./following.php?follow_data=<?=$info_member['user_id']?>&userdata=<?=$member['user_id']?>'">
-
-              <input type="button" value="팔로우 취소" class="btn btn-danger" style="width:100px"
-              onClick="location.href='./following_cancel.php?follow_data=<?=$info_member['user_id']?>&userdata=<?=$member['user_id']?>'">
               <!-- <script>
               $(document).ready(function(){
                   $("#btn_id").click(function(){
@@ -144,13 +175,14 @@
               })
               </script> -->
            <?}else{?>
-             <h3>팔로우중</h3>
+            <input type="button" value="팔로우 취소" class="btn btn-danger" style="width:100px; background-color: #00c183; border: 1px solid #00c183;" 
+            onClick="location.href='./following_cancel.php?follow_data=<?=$info_member['user_id']?>&userdata=<?=$member['user_id']?>'">
            <?}?>
           </div>
         </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
           <button type="button" class="btn btn-default" onclick="history.back(); return false;">닫기</button>
-        </div>
+        </div> -->
       </div>
     </div>
     <?}?>

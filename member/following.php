@@ -32,6 +32,5 @@ mysqli_query($connect, $follower_query);
 ?>
 
 <script>
-    window.alert("팔로우성공");
-    history.back();
+    location.href="./member_info.php?user_id=<?=$following_id?>"
 </script>
