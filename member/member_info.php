@@ -7,10 +7,11 @@
     <title>PETSTAGRAM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../lib/mycss.css">
 
 
 </head>
@@ -31,7 +32,7 @@
         ?>
     <!-------------------------------------------글작성 모달----------------------------------------------------------------->
     <div class="container" style="padding-top: 10px">
-      <nav class="navbar navbar-inverse" bgcolor="#00C183">
+      <nav class="navbar navbar-default">
           <div class="container-fluid">
               <div class="navbar-header">
                   <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#nav_menu" aria-expanded="false">
@@ -41,7 +42,7 @@
                       <span class="icon-bar"></span>
                   </button>
                   <a class="navbar-brand" href="../index.php">
-                  PETSTAGRAM
+                  Petstagram
                   </a>
               </div>
               <div class="collapse navbar-collapse" id="nav_menu">
