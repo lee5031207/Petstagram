@@ -78,7 +78,7 @@
      if(!$member){?>
      <div class="mainbox">
             <div class="form_box1">
-                
+
             </div>
             <div class="form_box">
             <h2 style="color: black; font-family: 'Shadows Into Light', cursive; text-align:center;">Petstagram</h2>
@@ -129,7 +129,7 @@
                       <tr>
                         <td align="center">
                           <a href="./board/bbs1/view.php?no=<?=$board_data['no']?>&id=<?=$board_data['id']?>" style="text-decoration: none; color:black;">
-                          <img src="./board/bbs1/data/<?=$board_data['file01']?>" width="50%">
+                          <img src="./board/bbs1/data/<?=$board_data['file01']?>" width="15%" height="25%">
                           <br><br><br><p width="50%"><?=$board_data['story']?></p>
                           </a>
                           <?
@@ -138,7 +138,7 @@
                           $comment_result = mysqli_query($connect, $comment_query);
                           $nowtime = date("YmdHis",time());  //날짜 시간
                           ?>
-                          <div style="border:1px solid lightgrey; margin:10px; background-color:white;">
+                          <div style="width:50%; border:1px solid lightgrey; margin:10px; background-color:white;">
                           <?while($comment = mysqli_fetch_array($comment_result)){
                               $year = substr($comment['regdate'],2,2);
                               $month = substr($comment['regdate'],4,2);
@@ -169,26 +169,11 @@
                               <?=$comment['comment']?></p>
                               <hr>
                           <?
-                          }
-                          if($member){?>
-                          <div>
-                              <form name="comment" action="./board/bbs1/comment_post.php?no=<?=$board_data['no']?>" method="POST">
-                              <?=$member['user_id']?>(<?=$member['name']?>):
-                              <input type="text" name="comment" style="width:80%">&nbsp;&nbsp;&nbsp;&nbsp;
-                              <button type="submit" class="btn btn-primary">입력</button>
-                              </form>
-                          </div>
-                          <?}else{?>
-                              <div style="text-align:center;">
-                              <form name="comment" action="./board/bbs1/comment_post.php?no=<?=$board_data['no']?>" method="POST">
+                        }?>
 
-                              <input type="text" name="comment" style="width:80%">&nbsp;&nbsp;&nbsp;&nbsp;
-                              <button type="submit" class="btn btn-primary">입력</button>
-                              </form>
-                          </div>
-                          <?}?>
                         </td>
                       <tr>
+                        <hr>
                   </table>
               </div>
               <?}?>

@@ -3,8 +3,8 @@
 function dbconn(){
     $host_name="localhost";
     $db_user_id="root";
-    $db_name="lee5031207";
-    $db_pw="569321";
+    $db_name="petsta";
+    $db_pw="548568";
     $connect = mysqli_connect($host_name,$db_user_id,$db_pw,$db_name);
 
     if(!$connect)die("연결에 실패하였습니다." .mysqli_error());
