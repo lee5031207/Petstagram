@@ -89,7 +89,7 @@
                 <label>닉네임</label>
                 <input type="text" name="nick_name" id="nick_name" size="10" class="form-control"><br>
                 <input type="button" id="btn_nick" value="중복확인" class="btn btn-primary" style="width:80px">
-                <span class="double_result2" style="color:gray;">(닉네임는 영문,숫자 4~15자리)</span><br>
+                <span class="double_result2" style="color:gray;">(닉네임는 한글 1~5자 영문 4~15자)</span><br>
                 <script>
                 $(document).ready(function(){
                     $("#btn_nick").click(function(){
