@@ -76,6 +76,29 @@
      </div>
      <?
      if(!$member){?>
+     <div class="mainbox">
+            <div class="form_box1">
+                
+            </div>
+            <div class="form_box">
+            <h2 style="color: black; font-family: 'Shadows Into Light', cursive; text-align:center;">Petstagram</h2>
+            <form action="./member/login_post.php" name="login" method="post">
+                <div class="form-group">
+                <label>아이디</label>
+                <input type="text" name="user_id" size="15" class="form-control">
+                </div>
+                <div class="form-group">
+                <label>비밀번호</label>
+                <input type="password" name="pw" size="15" class="form-control">
+                </div>
+                <div style="text-align:center;">
+                <button type="submit" class="btn btn-primary" style="margin-bottom:20px; background-color:#00c183; border: 1px solid #00c183; width: 50%; border-radius: 48px; margin-top: 10%;">
+                    로그인
+                </button>
+                </div>
+             </form>
+            </div>
+     </div>
      <?}else{
         $following_query = "SELECT * FROM ".$member['user_id']."_following";
         $following_result = mysqli_query($connect,$following_query);
@@ -174,7 +197,7 @@
         <?} else{?>
           <div align="center">
             <img src="./hide.png">
-            <h1>팔로우를 해보세요!</h1>
+            <h1 style="font-family: 'Do Hyeon', sans-serif;">팔로우를 해보세요!</h1>
           <div>
         <?}?>
      <?}?>
