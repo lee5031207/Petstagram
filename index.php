@@ -75,10 +75,26 @@
         </nav>
      </div>
      <?
-     if($member){?>
+     if(!$member){?>
     <div class="mainbox">
         
     </div>
+     <?}else{
+        $following_query = "SELECT * FROM ".$member['user_id']."_following";
+        $following_result = mysqli_query($connect,$following_query);
+        while($following_data = mysqli_fetch_array($following_result)){
+            $following_data_user_id = $following_data['user_id'];
+            $board_query = " SELECT * FROM bbs1 WHERE user_id = '".$following_data_user_id."'";
+            $board_result = mysqli_query($connect,$board_query);
+            while($board_data = mysqli_fetch_array($board_result)){?>
+            <div>
+                <table class="table table-borde#A4A4A4 table-hover">
+                    <tr><td><strong><?=$board_data['nick_name'];?></td></tr>
+                    <tr><td><img src="./board/bbs1/data/<?=$board_data['file01']?>"></td><tr>
+                </table>
+            </div>
+            <?}?>
+        <?}?>    
      <?}?>
      
 </body>
