@@ -57,7 +57,7 @@
                   <ul class="nav navbar-nav navbar-right">
                   <?
                       if($member){
-                          ?><li><a><?echo $member['name']?>(<?echo $member['user_id']?>)님 환영합니다</a></li>
+                          ?><li><a href="member_info.php?user_id=<?=$member['user_id']?>"><?echo $member['name']?>(<?echo $member['user_id']?>)님 환영합니다</a></li>
                           <?
                       }else{?>
                       <li>
@@ -81,7 +81,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" onclick="history.back(); return false;"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="close" onclick="location.href='../index.php'"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="exampleModalLabel" style="text--align:center;">내 정보</h4>
           </div>
           <div class="modal-body">
