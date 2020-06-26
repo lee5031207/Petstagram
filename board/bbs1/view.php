@@ -85,30 +85,16 @@
         $result = mysqli_query($connect, $query);
         $data = mysqli_fetch_array($result);
         ?>
-        <div style="border:1px solid gray;">
+        <div style="border:1px solid gray;" align="center">
             <h4 style="text-align:center;  font-size: x-large;"><?=$data['subject']?></h4>
             <a href='../../member/member_info.php?user_id=<?=$data['user_id']?>'>
-              <h5 style="padding-left:50px;"><?=$data['name']?>&nbsp;(<?=$data['user_id']?>)
+              <h5><?=$data['name']?>&nbsp;(<?=$data['user_id']?>)
             </a>
             &nbsp;&nbsp;&nbsp;조회수:<?=$data['hit']?></h5>
             <hr width="95%" color='94a0fc'>
             <?if($data['file01']){?><img src="./data/<?=$data['file01']?>" alt="<?=$data['file01']?>" width="50%" style="margin:5%;"><?}?>
-            <p style="padding-left:50px;"><?=$data['story']?></p>
+            <p><?=$data['story']?></p>
         </div><br>
-        <div>
-        <?
-        if($member['user_id']==$data['user_id']){
-            ?>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-            글수정
-            </button>
-            <button type="button" class="btn btn-danger" onclick="location.href='./delete.php?no=<?=$data['no']?>&id=<?=$data['id']?>'">
-            글삭제
-            </button>
-            <?
-        }
-        ?>
-        </div>
         <div>
             <?
             // 댓글 자체를 가져온다.
@@ -151,6 +137,22 @@
             </div>
 
         </div>
+        <div align="center">
+        <?
+        if($member['user_id']==$data['user_id']){
+            ?>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+            글수정
+            </button>
+            <button type="button" class="btn btn-danger" onclick="location.href='./delete.php?no=<?=$data['no']?>&id=<?=$data['id']?>'">
+            글삭제
+            </button>
+            <?
+        }
+        ?>
+        </div>
+
+
         <?if($member){?>
         <div>
             <form name="comment" action="comment_post.php?no=<?=$no?>" method="POST">
