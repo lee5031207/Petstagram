@@ -84,11 +84,11 @@
             <h2 style="color: black; font-family: 'Shadows Into Light', cursive; text-align:center;">Petstagram</h2>
             <form action="./member/login_post.php" name="login" method="post">
                 <div class="form-group">
-                <label>아이디</label>
+                <label>ID</label>
                 <input type="text" name="user_id" size="15" class="form-control">
                 </div>
                 <div class="form-group">
-                <label>비밀번호</label>
+                <label>Password</label>
                 <input type="password" name="pw" size="15" class="form-control">
                 </div>
                 <div style="text-align:center;">
@@ -118,18 +118,17 @@
                 $time = substr($board_data['regdate'],8,2);
                 $minute =substr($board_data['regdate'],10,2);?>
               <div>
-                  <table class="table table-borde#A4A4A4 table-hover">
+                  <table class="table table-borde#A4A4A4 table-hover" style="margin:auto; width:80%" >
                       <tr>
-                        <td align="center">
-                          <strong><?=$board_data['name'];?></strong>
-                          <strong>(<?=$board_data['nick_name'];?>)&nbsp;&nbsp;&nbsp;&nbsp;</strong>
-                          <strong>작성일 : </strong><?=$year?> <?=$month?> <?=$day?>
+                        <td align="center" style="background-color:#b7ffe8; border:1px solid #b7FFE8;">
+                          <strong><a href="./member/member_info.php?user_id=<?=$board_data['user_id']?>"><?=$board_data['name'];?>(<?=$board_data['nick_name'];?>)</a>&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                          <b style="font-weight: 100; font-size: 70%;"><?=$year?>.<?=$month?>.<?=$day?></b>
                         </td>
                       </tr>
                       <tr>
-                        <td align="center">
+                        <td align="center" style="background-color:#f8f8f8;">
                           <a href="./board/bbs1/view.php?no=<?=$board_data['no']?>&id=<?=$board_data['id']?>" style="text-decoration: none; color:black;">
-                          <img src="./board/bbs1/data/<?=$board_data['file01']?>" width="15%" height="25%">
+                          <img src="./board/bbs1/data/<?=$board_data['file01']?>" width="50%" height="40%">
                           <br><br><br><p width="50%"><?=$board_data['story']?></p>
                           </a>
                           <?
@@ -138,7 +137,7 @@
                           $comment_result = mysqli_query($connect, $comment_query);
                           $nowtime = date("YmdHis",time());  //날짜 시간
                           ?>
-                          <div style="width:50%; border:1px solid lightgrey; margin:10px; background-color:white;">
+                          <div style="width:80%; border:1px solid lightgrey; margin:10px; background-color:white; text-align:left; padding-left:4%;">
                           <?while($comment = mysqli_fetch_array($comment_result)){
                               $year = substr($comment['regdate'],2,2);
                               $month = substr($comment['regdate'],4,2);
