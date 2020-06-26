@@ -3,14 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
 
 .mainbox{
-    width : 100%;
-    height : 650px;
-    background-image: url("../pet.png");
+    /* width: 100%;
+    height: 400px;
+    background-image: url(../puppy7.png);
+    background-size: 25%;
     background-repeat: no-repeat;
-    background-position-x: 50% ;
-    /* background-color: #00c183; */
-    grid-template-rows : 150px  390px  150px;
+    background-position-x: 14%;
+    background-position-y: 37%;
+    background-color: #b7ffe8;
+    grid-template-rows: 150px 390px 150px; */
 }
+    /* border: 1px solid black;
+
 
 /* .container-fluid{
     background-color: #00c183;
