@@ -80,20 +80,21 @@
    $query_hot = 'select * from QnA order by hit desc limit 3';
    $result_hot = mysqli_query($connect,$query_hot);
 ?>
+<h2 style="font-family: 'Do Hyeon', sans-serif;">Hot QnA</h2>
  <table class="table table-borde#A4A4A4 table-hover">
-            <tr>
+            <!-- <tr>
                 <th style="text-align:center; width:7%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:16%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:40%; background-color:#A4A4A4;">QnA 인기글</th>
                 <th style="text-align:center; width:20%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:7%; background-color:#A4A4A4;"></th>
-            </tr>
+            </tr> -->
             <tr>
-                <th style="text-align:center; width:7%; background-color:#A4A4A4;">no</th>
-                <th style="text-align:center; width:16%; background-color:#A4A4A4;">이름</th>
-                <th style="text-align:center; width:40%; background-color:#A4A4A4;">제목</th>
-                <th style="text-align:center; width:20%; background-color:#A4A4A4;">날짜</th>
-                <th style="text-align:center; width:7%; background-color:#A4A4A4;">조회수</th>
+                <th style="text-align:center; width:7%; background-color:#b7ffe8;">no</th>
+                <th style="text-align:center; width:16%; background-color:#b7ffe8;">이름</th>
+                <th style="text-align:center; width:40%; background-color:#b7ffe8;">제목</th>
+                <th style="text-align:center; width:20%; background-color:#b7ffe8;">날짜</th>
+                <th style="text-align:center; width:7%; background-color:#b7ffe8;">조회수</th>
             </tr>
 <?
 
@@ -150,21 +151,21 @@
     $totals = $temp[0];
 
 ?>
-
+<h2 style="font-family: 'Do Hyeon', sans-serif;">QnA</h2>
         <table class="table table-borde#A4A4A4 table-hover">
-            <tr>
+            <!-- <tr>
                 <th style="text-align:center; width:7%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:16%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:40%; background-color:#A4A4A4;">QnA 게시판</th>
                 <th style="text-align:center; width:20%; background-color:#A4A4A4;"></th>
                 <th style="text-align:center; width:7%; background-color:#A4A4A4;"></th>
-            </tr>
+            </tr> -->
             <tr>
-                <th style="text-align:center; width:7%; background-color:#A4A4A4;">no</th>
-                <th style="text-align:center; width:16%; background-color:#A4A4A4;">이름</th>
-                <th style="text-align:center; width:40%; background-color:#A4A4A4;">제목</th>
-                <th style="text-align:center; width:20%; background-color:#A4A4A4;">날짜</th>
-                <th style="text-align:center; width:7%; background-color:#A4A4A4;">조회수</th>
+                <th style="text-align:center; width:7%; background-color:#b7ffe8;">no</th>
+                <th style="text-align:center; width:16%; background-color:#b7ffe8;">이름</th>
+                <th style="text-align:center; width:40%; background-color:#b7ffe8;">제목</th>
+                <th style="text-align:center; width:20%; background-color:#b7ffe8;">날짜</th>
+                <th style="text-align:center; width:7%; background-color:#b7ffe8;">조회수</th>
             </tr>
 <?
     $query="select * from QnA order by no desc limit $page,$view_total ";
@@ -211,13 +212,15 @@
         if($member){
         ?>
         <div class="col-sm-12">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"
+            style="width:100px; background-color: #00c183; border: 1px solid #00c183;">
             글쓰기
             </button>
         </div>
         <?}else{?>
         <div class="col-sm-12">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm"
+            style="width:100px; background-color: #00c183; border: 1px solid #00c183;">
             글쓰기
             </button>
         </div>
@@ -231,10 +234,11 @@
                         <h4 class="modal-title" id="exampleModalLabel">로그인 후 이용해 주세요</h4>
                     </div>
                     <div class="modal_body">
-                        <button type="button" class="btn btn-primary" style="margin:30px;" onclick="location.href='../../member/login.php'">
+                        <button type="button" class="btn btn-primary" style="margin:30px; background-color: #00c183; border: 1px solid #00c183;" onclick="location.href='../../member/login.php'"
+                        >
                             로그인
                         </button>
-                        <button type="button" class="btn btn-primary" style="margin:30px;" onclick="location.href='../../member/join.php'">
+                        <button type="button" class="btn btn-primary" style="margin:30px; background-color: #00c183; border: 1px solid #00c183;" onclick="location.href='../../member/join.php'">
                             회원가입
                         </button>
                     </div>
@@ -244,31 +248,28 @@
 
             <!-------------------------------------------글작성 모달----------------------------------------------------------------->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog" style="font-weight:bold">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="exampleModalLabel">Q&A게시판 글쓰기</h4>
                     </div>
-                <div class="modal-body">
-                    <form name="write" action="qna_write_post.php" method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="bbs1" class="form-control" >
-                        아이디&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="user_id" size='15' value="<?=$member['user_id'];?>" readonly='readonly'><br><br>
-                        이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="name" size='16' value="<?=$member['name'];?>" readonly='readonly'>&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;
-                        닉네임&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
-                        <input type="text" name="nick_name" size='15' value="<?=$member['nick_name'];?>" readonly='readonly'><br><br>
-                        제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="subject" size='50'><br><br>
+                    <div class="modal-body">
+                    <form name="write" action="write_post.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="bbs1" class="form-control">
+                        <input type="text" class="box" name="user_id" size='15' value="<?=$member['user_id'];?>" readonly='readonly'>&nbsp;&nbsp;
+                        <input type="text" class="box" name="name" size='16' value="<?=$member['name'];?>" readonly='readonly'>&nbsp;&nbsp;
+                        <input type="text" class="box" name="nick_name" size='15' value="<?=$member['nick_name'];?>" readonly='readonly'><br><br>
+                        제목&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
+                        <input type="text" name="subject" size='50' class="box"><br><br>
                         <input type="file" name="file01"><br>
-                        <textarea name="story"  style="width:100%; height:300px;"  placeholder="내용을 입력하시오"></textarea>
+                        <textarea name="story"  style="width:100%; height:300px;"  placeholder="내용을 입력하시오"  class="box"></textarea>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-                    <button type="submit" class="btn btn-primary">완료</button>
+                    <button type="submit" class="btn btn-primary" style="width:100px; background-color: #00c183; border: 1px solid #00c183;">완료</button>
+                    <button type="button" class="btn btn-default" style="width:100px; data-dismiss="modal" >닫기</button>
+                    
                     </form>
                 </div>
             </div>
