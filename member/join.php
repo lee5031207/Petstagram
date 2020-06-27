@@ -51,13 +51,13 @@
         </nav>
         <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6" style="border:1px solid lightgrey; border-radius: 10px; " >
-            <h2 style="text-align:center;">SIGN IN</h2>
+        <div class="col-md-6" style="border:1px solid lightgrey; border-radius: 10px;">
+            <h2 style="text-align:center; font-family: 'Do Hyeon', sans-serif;">SIGN IN</h2>
             <form action="./join_post.php" name="member" method="post">
                 <input type="hidden" name="id" value="test">
-                <label>아이디</label>
+                <label>ID</label>
                 <input type="text" name="user_id"  id="user_id" class="form-control"><br>
-                <input type="button" id="btn_id" value="중복확인" class="btn btn-primary" style="width:80px">
+                <input type="button" id="btn_id" value="중복확인" class="btn btn-primary" style="width:80px; background-color:#00c183; border:1px solid #00c183;">
                 <span class="double_result" style="color:gray;">(아이디는 영문,숫자 4~15자리)</span><br>
                 <script>
                 $(document).ready(function(){
@@ -88,7 +88,7 @@
                 <!-- <div class="form-group"> -->
                 <label>닉네임</label>
                 <input type="text" name="nick_name" id="nick_name" size="10" class="form-control"><br>
-                <input type="button" id="btn_nick" value="중복확인" class="btn btn-primary" style="width:80px">
+                <input type="button" id="btn_nick" value="중복확인" class="btn btn-primary" style="width:80px; background-color:#00c183; border:1px solid #00c183;">
                 <span class="double_result2" style="color:gray;">(닉네임는 한글 1~5자 영문 4~15자)</span><br>
                 <script>
                 $(document).ready(function(){
@@ -171,7 +171,7 @@
                 <input type="text" name="addr_2" class="form-control"><br>
                 </div>
                 <div style="text-align:center;">
-                <button type="submit" class="btn btn-primary" style="margin-bottom:20px;">
+                <button type="submit" class="btn btn-primary" style="margin-bottom:20px; background-color:#00c183; border:1px solid #00c183;">
                 가입하기
                 </button>
             </form>

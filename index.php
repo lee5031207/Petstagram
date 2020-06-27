@@ -85,11 +85,11 @@
             <form action="./member/login_post.php" name="login" method="post">
                 <div class="form-group">
                 <label>ID</label>
-                <input type="text" name="user_id" size="15" class="form-control">
+                <input type="text" name="user_id" size="15" class="form-control" style="background-color: #B7FFE8; border-bottom: 2px solid black;">
                 </div>
                 <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="pw" size="15" class="form-control">
+                <input type="password" name="pw" size="15" class="form-control" style="background-color: #B7FFE8; border-bottom: 2px solid black;">
                 </div>
                 <div style="text-align:center;">
                 <button type="submit" class="btn btn-primary" style="margin-bottom:20px; background-color:#00c183; border: 1px solid #00c183; width: 50%; border-radius: 48px; margin-top: 10%;">

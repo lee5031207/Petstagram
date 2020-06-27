@@ -57,7 +57,7 @@
                 <input type="password" name="pw" size="15" class="form-control">
                 </div>
                 <div style="text-align:center;">
-                <button type="submit" class="btn btn-primary" style="margin-bottom:20px;">
+                <button type="submit" class="btn btn-primary" style="margin-bottom:20px; background-color:#00c183; border:1px solid #00c183;">
                     로그인
                 </button>
                 </div>
